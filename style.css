@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --ff-secondary: "Poppins", sans-serif;
+}
+
+body {
+    background-color: rgba(202, 231, 248, 0.753);
+    font-family: var(--ff-secondary);
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    /* visibility: hidden; */
+}
+
+li {
+    list-style-type: none;
+}
+
+.introduction {
+    /* background: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.7)),
+        url(./images/gandr-collage.jpg) center/cover no-repeat; */
+    min-height: 100vh;
+    justify-content: center;
+    align-content: center;
+}
+
+.into-text-container {
+    justify-content: center;
+    align-content: center;
+    min-height: 5vh;
+    background-color: red;
+}
+
+.link-container {
+    /* background-color: red; */
+    width: 50vw;
+    align-content: center;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.links {
+    display: flex;
+    /* background-color: aqua; */
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-content: center;
+}
+
+.link {
+    /* background-color: rgb(255, 127, 255); */
+    flex-direction: row;
+    color: white;
+}
+
+.logo {}
