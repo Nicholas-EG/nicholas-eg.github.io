@@ -26,12 +26,17 @@ header {
     position: fixed;
     width: 100%;
     z-index: 1;
+    margin: 0;
 }
 
 footer {
     background-color: var(--secondary-color);
     margin: 0;
     padding: 1rem;
+}
+
+footer a {
+    color: var(--text-color);
 }
 
 li {
@@ -43,13 +48,48 @@ h3 {
     margin: 1rem;
 }
 
+nav {
+    display: flex;
+    /* height: 100%; */
+    flex-grow: 1;
+    margin: 0;
+}
+
 .display {
     display: flex;
     flex-direction: row;
 }
 
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+.dropbtn {}
+
 .dropdown-content {
     display: none;
+    position: absolute;
+    top: 100%;
+    background-color: var(--secondary-color);
+    width: 20%;
+    z-index: 2;
+}
+
+.dropdown-content a {
+    color: var(--text-color);
+    flex-shrink: 0;
+    margin: 1.5rem auto;
+}
+
+.dropdown-content a:hover {
+    color: var(--text-color) !important;
+    background-color: rgb(73, 80, 85);    
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 .footer-text {
@@ -94,30 +134,45 @@ h3 {
     font-size: 1.5rem;
 }
 
-.link-container {
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
+.nav-menu {
+    /* background-color: aliceblue; */
+    /************/
     display: flex;
+    flex-direction: row;
     flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+
 }
 
-.links {
+.nav-menu li {
+    /* background-color: red; */
+    /**********/
     display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    align-items: center;
-    margin: 0 1rem 0 1rem;
     flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin: 0;
 }
 
-.link {
-    flex-direction: row;
+.nav-menu a {
+    /* background-color: rgb(63, 63, 63); */
+    /**********/
+    display: flex;
     color: var(--text-color);
+    text-decoration: none;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
-.link:hover {
-    color: grey;
+.nav-menu a:hover {
+    color: gray;
     transition: color 0.25s;
 }
 
@@ -186,4 +241,9 @@ h3 {
     border: 10px solid var(--secondary-color);
     margin: 1rem;
     object-fit: cover;
+}
+
+#lang-select {
+    /* display: none; */
+    width: 10%;
 }
