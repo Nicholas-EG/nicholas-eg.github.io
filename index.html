@@ -1,142 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Bueno Law Corporation | Home</title>
-    <link rel="icon" type="image/x-icon" href="/images/cropped-BL-icon-2-32x32.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <style>
+        #map {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        .country_data {
+            padding: 6px 8px;
+            font: 14px/16px Arial, Helvetica, sans-serif;
+            background: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        .country_data h4 {
+            margin: 0 0 5px;
+            color: #000;
+        }
+
+        .flag_selector {
+            padding: 6px 8px;
+            font: 14px/16px Arial, Helvetica, sans-serif;
+            background: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        /* Dropdown Button */
+        .dropbtn {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: black;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
+
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Change the background color of the dropdown button when the dropdown content is shown */
+        .dropdown:hover .dropbtn .flag_selector{
+            background-color: #3e4a8e;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 
 <body>
-    <header>
-        <a href="#home">
-            <img class="logo" src="images/BL-logo-white-colorful.webp" alt="BLO Logo">
-        </a>
-        <!-- nav bar -->
-        <nav>
-            <ul class="nav-menu">
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Services</a>
-                    <div class="dropdown-content">
-                        <a href="#">Asylum</a>
-                        <a href="#">Special Immigrant Juveniles</a>
-                        <a href="#">Victims of Domestic Violence</a>
-                        <a href="#">Immigration Processing & Green Cards</a>
-                        <a href="#">Family Based Immigration</a>
-                        <a href="#">Naturalization & Citizenship</a>
-                        <a href="#">U Visa</a>
-                        <a href="#">T Visa</a>
-                        <a href="#">Deportation Defense</a>
-                    </div>
-                </li>
-                <li>
-                    <a href="#">FAQs</a>
-                </li>
-                <li>
-                    <a href="#">Testimonials</a>
-                </li>
-                <li>
-                    <a href="#">Resources</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Languages</a>
-                    <div class="dropdown-content" id="lang-select">
-                        <a href="#">English</a>
-                        <a href="#">Español</a>
-                        <a href="#">Português</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <!-- Introduction section -->
-    <section class="introduction" id="home">
-        <div class="intro-text-container">
-            <img class="logo" src="images/BL-logo-white-colorful.webp" alt="BLO Logo">
-            <div class="vl"></div>
-            <div>
-                <h1 class="intro-text">Welcome to Bueno Law</h2>
-                    <p class="intro-text">Empowering Hope, Navigating Futures</p>
-            </div>
-        </div>
-    </section>
-    <!-- about us section -->
-    <section class="section" id="about-us">
-        <div class="title">
-            <h2>about <span>us</span></h2>
-        </div>
-        <div class="display">
-            <img src="./images/Fernanda-headshot.webp" class="display-photo" alt="Fernanda Bueno">
-            <div class="info">
-                <p>Established in 2017, Bueno Law has rapidly grown into a leading advocate for clients across diverse
-                    legal landscapes. With a dedicated team of over 50 professionals, we have proudly served more than
-                    1,000
-                    clients, offering expert guidance and personalized solutions. Our commitment to excellence and
-                    client satisfaction drives us to continuously deliver top-tier legal services, ensuring that every
-                    case
-                    receives the attention and expertise it deserves.</p>
-                <h3>Who are the Bueno Law Warriors?</h3>
-                <p>
-                    At Bueno Law, our team embodies a profound commitment to justice and empathy, shaped by our personal
-                    journeys as immigrants and refugees. Founded by Fernanda Bueno, who herself endured the harrowing
-                    experience of seeking safety in the U.S., our firm is a sanctuary for those navigating the
-                    complexities of immigration. We are a diverse group hailing from Brazil, El Salvador, Mexico,
-                    Guatemala, and Argentina, and we bring a wealth of shared experiences and cultural insights to our
-                    practice. Each member of our team has faced their own struggles and triumphs, allowing us to deeply
-                    understand and relate to the challenges our clients face. Whether working locally in California or
-                    remotely, we unite with unwavering determination to fight for the safety and freedom of our clients,
-                    always fiercely advocating for their best interests. At Bueno Law, we are not just legal
-                    professionals; we
-                    are dedicated warriors standing by your side, ensuring that fear has no place in your journey
-                    towards
-                    a brighter future.</p>
-            </div>
-        </div>
-    </section>
-    <!-- about you section -->
-    <section class="section" id="about-you">
-        <div class="title">
-            <h2>who we serve</h2>
-        </div>
-        <div class="display">
-            <div class="info">
-                <p>place holder text</p>
-            </div>
-            <!-- carosel slides -->
-            <div class="slider-container">
-                <div class="slide">
-                    <img src="./images/slides/IMG_2677.PNG" alt="" class="slide-img">
-                </div>
-                <div class="slide">
-                    <img src="./images/slides/IMG_2684.PNG" alt="" class="slide-img">
-                </div>
-                <div class="slide">
-                    <img src="./images/slides/IMG_2691.PNG" alt="" class="slide-img">
-                </div>
-                <div class="slide">
-                    <img src="./images/slides/IMG_2692.PNG" alt="" class="slide-img">
-                </div>
-                <div class="slide">
-                    <img src="./images/slides/IMG_2693.PNG" alt="" class="slide-img">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Footer -->
-    <footer>
-        <p class="footer-text">None of the information provided here serves as legal advice. The information here or
-            communications with Bueno Law Office does not create an Attorney-Client relationship. This website is an
-            advertisement. Please consult an immigration attorney before relying on this information. Please do not send
-            any confidential information to our office until an Attorney-Client relationship is formed and a contract is
-            signed.</p>
-        <p class="footer-text">Website designed by <a href="https://nicholas-eg.github.io/">Nicholas Gonzales</a> | Copyright &copy; Bueno Law Corporation <span>2024</span>. All rights reserved.</p>
-    </footer>
+    <div id="map"></div>
     <script src="app.js"></script>
 </body>
 
