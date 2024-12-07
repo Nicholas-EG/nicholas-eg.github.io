@@ -10,7 +10,7 @@ var map = L.map('map', {
     zoomControl: false,
     maxBounds: [[-60, -30], [75, 330]],
     maxZoom: 9,
-    minZoom: 3.5,
+    minZoom: 3,
 });
 L.tileLayer('https://api.maptiler.com/maps/streets-v2-dark/{z}/{x}/{y}.png?key=pdMuFnctsVyQQHO4O2Nx', {
     maxZoom: 19,
@@ -47,7 +47,8 @@ flag_selector.update = function() {
     this._div.innerHTML = '<div class="dropdown">' +
     '<button class="dropbtn">Flag Selector</button>' +
     '<div class="dropdown-content">' +
-    '<a href="#" onclick="setFlag("AfricanUnion")">African Union</a>' +
+    '<a href="#" onclick="setFlag("African Union")">African Union</a>' +
+    '<a href="#" onclick="setFlag("European Union")">European Union</a>' +
     '</div></div>';
 }
 
@@ -139,22 +140,22 @@ fetch('./countries/argentina-detailed-boundary_850.geojson').then(res => res.jso
      argentina => L.geoJson(argentina, { style: style(0), onEachFeature: onEachFeature }).addTo(map)
 );
 fetch('./countries/australia-detailed-boundary_853.geojson').then(res => res.json()).then(
-    australia => L.geoJson(australia, { style: style(1), onEachFeature: onEachFeature }).addTo(map)
+    australia => L.geoJson(australia, { style: style(0), onEachFeature: onEachFeature }).addTo(map)
 );
 fetch('./countries/brazil-detailed-boundary_869.geojson').then(res => res.json()).then(
     brazil => L.geoJson(brazil, { style: style(0), onEachFeature: onEachFeature }).addTo(map)
 );
 fetch('./countries/canada-detailed-boundary_877.geojson').then(res => res.json()).then(
-    canada => L.geoJson(canada, { style: style(1), onEachFeature: onEachFeature }).addTo(map)
+    canada => L.geoJson(canada, { style: style(0), onEachFeature: onEachFeature }).addTo(map)
 );
 fetch('./countries/china-detailed-boundary_883.geojson').then(res => res.json()).then(
     china => L.geoJson(china, { style: style(2), onEachFeature: onEachFeature }).addTo(map)
 );
 fetch('./countries/france-detailed-boundary_911.geojson').then(res => res.json()).then(
-    france => L.geoJson(france, { style: style(1), onEachFeature: onEachFeature }).addTo(map)
+    france => L.geoJson(france, { style: style(0), onEachFeature: onEachFeature }).addTo(map)
 );
 fetch('./countries/germany-detailed-boundary_917.geojson').then(res => res.json()).then(
-    germany => L.geoJson(germany, { style: style(1), onEachFeature: onEachFeature }).addTo(map)
+    germany => L.geoJson(germany, { style: style(0), onEachFeature: onEachFeature }).addTo(map)
 );
 fetch('./countries/india-detailed-boundary_936.geojson').then(res => res.json()).then(
     india => L.geoJson(india, { style: style(0), onEachFeature: onEachFeature }).addTo(map)
@@ -163,16 +164,16 @@ fetch('./countries/indonesia-detailed-boundary_937.geojson').then(res => res.jso
     indonesia => L.geoJson(indonesia, { style: style(0), onEachFeature: onEachFeature }).addTo(map)
 );
 fetch('./countries/italy-detailed-boundary_943.geojson').then(res => res.json()).then(
-    italy => L.geoJson(italy, { style: style(1), onEachFeature: onEachFeature }).addTo(map)
+    italy => L.geoJson(italy, { style: style(0), onEachFeature: onEachFeature }).addTo(map)
 );
 fetch('./countries/japan-detailed-boundary_945.geojson').then(res => res.json()).then(
-    japan => L.geoJson(japan, { style: style(1), onEachFeature: onEachFeature }).addTo(map)
+    japan => L.geoJson(japan, { style: style(0), onEachFeature: onEachFeature }).addTo(map)
 );
 fetch('./countries/mexico-detailed-boundary_974.geojson').then(res => res.json()).then(
     mexico => L.geoJson(mexico, { style: style(0), onEachFeature: onEachFeature }).addTo(map)
 );
 fetch('./countries/russia-detailed-boundary_1012.geojson').then(res => res.json()).then(
-    russia => L.geoJson(russia, { style: style(2), onEachFeature: onEachFeature }).addTo(map)
+    russia => L.geoJson(russia, { style: style(0), onEachFeature: onEachFeature }).addTo(map)
 );
 fetch('./countries/saudi-arabia-outline_634.geojson').then(res => res.json()).then(
     saudi_arabia => L.geoJson(saudi_arabia, { style: style(0), onEachFeature: onEachFeature }).addTo(map)
@@ -181,21 +182,21 @@ fetch('./countries/south-africa-detailed-boundary_1035.geojson').then(res => res
     south_africa => L.geoJson(south_africa, { style: style(0), onEachFeature: onEachFeature }).addTo(map)
 );
 fetch('./countries/south-korea-detailed-boundary_952.geojson').then(res => res.json()).then(
-    south_korea => L.geoJson(south_korea, { style: style(1), onEachFeature: onEachFeature }).addTo(map)
+    south_korea => L.geoJson(south_korea, { style: style(0), onEachFeature: onEachFeature }).addTo(map)
 );
 fetch('./countries/turkey-detailed-boundary_1054.geojson').then(res => res.json()).then(
     turkey => L.geoJson(turkey, { style: style(0), onEachFeature: onEachFeature }).addTo(map)
 );
 fetch('./countries/united-kingdom-detailed-boundary_1061.geojson').then(res => res.json()).then(
-    united_kingdom => L.geoJson(united_kingdom, { style: style(1), onEachFeature: onEachFeature }).addTo(map)
+    united_kingdom => L.geoJson(united_kingdom, { style: style(0), onEachFeature: onEachFeature }).addTo(map)
 );
 fetch('./countries/united-states-detailed-boundary_1062 (1).geojson').then(res => res.json()).then(
-    united_states => L.geoJson(united_states, { style: style(1), onEachFeature: onEachFeature }).addTo(map)
+    united_states => L.geoJson(united_states, { style: style(0), onEachFeature: onEachFeature }).addTo(map)
 );
-fetch('./countries/africa-outline-with-countries_6 (1).geojson').then(res => res.json()).then(
+fetch('./countries/african union.geojson').then(res => res.json()).then(
     african_union => L.geoJson(african_union, { style: style(0), onEachFeature: onEachFeature }).addTo(map)
 );
-fetch('./countries/europe_.geojson').then(res => res.json()).then(
+fetch('./countries/EU.geojson').then(res => res.json()).then(
     european_union => L.geoJson(european_union, { style: style(0), onEachFeature: onEachFeature }).addTo(map)
 );
 fetch('./countries/brunei-darussalam-detailed-boundary_871.geojson').then(res => res.json()).then(
@@ -214,7 +215,7 @@ fetch('./countries/malaysia-detailed-boundary_967.geojson').then(res => res.json
 //     myanmar => L.geoJson(myanmar, { style: style(0), onEachFeature: onEachFeature }).addTo(map)
 // );
 fetch('./countries/philippines-detailed-boundary_1004.geojson').then(res => res.json()).then(
-    philippines => L.geoJson(philippines, { style: style(1), onEachFeature: onEachFeature }).addTo(map)
+    philippines => L.geoJson(philippines, { style: style(0), onEachFeature: onEachFeature }).addTo(map)
 );
 fetch('./countries/singapore-detailed-boundary_1029.geojson').then(res => res.json()).then(
     singapore => L.geoJson(singapore, { style: style(0), onEachFeature: onEachFeature }).addTo(map)
@@ -229,7 +230,7 @@ fetch('./countries/vietnam-detailed-boundary_1068.geojson').then(res => res.json
 //     iran => L.geoJson(iran, { style: style(0), onEachFeature: onEachFeature }).addTo(map)
 // );
 fetch('./countries/north-korea-detailed-boundary_951.geojson').then(res => res.json()).then(
-    north_korea => L.geoJson(north_korea, { style: style(2), onEachFeature: onEachFeature }).addTo(map)
+    north_korea => L.geoJson(north_korea, { style: style(0), onEachFeature: onEachFeature }).addTo(map)
 );
 fetch('./countries/taiwan-detailed-boundary_1045.geojson').then(res => res.json()).then(
     taiwan => L.geoJson(taiwan, { style: style(1), onEachFeature: onEachFeature }).addTo(map)
