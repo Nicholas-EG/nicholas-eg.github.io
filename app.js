@@ -12,7 +12,7 @@ var map = L.map('map', {
     maxZoom: 9,
     minZoom: 3,
 });
-L.tileLayer('https://api.maptiler.com/maps/streets-v2-dark/{z}/{x}/{y}.png?key=pdMuFnctsVyQQHO4O2Nx', {
+L.tileLayer('https://api.maptiler.com/maps/streets-v2-dark/{z}/{x}/{y}.png?key=yh7WfNoS9m48Tlh4jm6Q', {
     maxZoom: 19,
     attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
 }).addTo(map);
@@ -35,24 +35,24 @@ country_data.update = function (props) {
 
 country_data.addTo(map);
 
-var flag_selector = L.control();
+// var flag_selector = L.control();
 
-flag_selector.onAdd = function() {
-    this._div = L.DomUtil.create('div', 'flag_selector');
-    this.update();
-    return this._div;
-}
+// flag_selector.onAdd = function() {
+//     this._div = L.DomUtil.create('div', 'flag_selector');
+//     this.update();
+//     return this._div;
+// }
 
-flag_selector.update = function() {
-    this._div.innerHTML = '<div class="dropdown">' +
-    '<button class="dropbtn">Flag Selector</button>' +
-    '<div class="dropdown-content">' +
-    '<a href="#" onclick="setFlag("African Union")">African Union</a>' +
-    '<a href="#" onclick="setFlag("European Union")">European Union</a>' +
-    '</div></div>';
-}
+// flag_selector.update = function() {
+//     this._div.innerHTML = '<div class="dropdown">' +
+//     '<button class="dropbtn">Flag Selector</button>' +
+//     '<div class="dropdown-content">' +
+//     '<a href="#" onclick="setFlag("African Union")">African Union</a>' +
+//     '<a href="#" onclick="setFlag("European Union")">European Union</a>' +
+//     '</div></div>';
+// }
 
-flag_selector.addTo(map);
+// flag_selector.addTo(map);
 
 // Handlers
 function style(team) {
